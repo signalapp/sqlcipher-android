@@ -33,5 +33,5 @@ public interface DatabaseErrorHandler {
      * @param dbObj the {@link SQLiteDatabase} object representing the database on which corruption
      * is detected.
      */
-    void onCorruption(SQLiteDatabase dbObj);
+    void onCorruption(SQLiteDatabase dbObj, String message);
 }

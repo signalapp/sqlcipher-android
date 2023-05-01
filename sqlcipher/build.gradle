@@ -162,8 +162,9 @@ afterEvaluate {
     }
 
     signing {
-        required { isReleaseBuild() && gradle.taskGraph.hasTask("publish") }
-        sign publishing.publications.mavenJava
+        required { false }
+//        required { isReleaseBuild() && gradle.taskGraph.hasTask("publish") }
+//        sign publishing.publications.mavenJava
     }
 
     artifacts {

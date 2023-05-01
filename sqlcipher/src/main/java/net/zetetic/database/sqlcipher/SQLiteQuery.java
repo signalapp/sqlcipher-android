@@ -68,7 +68,7 @@ public final class SQLiteQuery extends SQLiteProgram {
                         mCancellationSignal);
                 return numRows;
             } catch (SQLiteDatabaseCorruptException ex) {
-                onCorruption();
+                onCorruption(ex.getMessage());
                 throw ex;
             } catch (SQLiteException ex) {
                 Log.e(TAG, "exception: " + ex.getMessage() + "; query: " + getSql());

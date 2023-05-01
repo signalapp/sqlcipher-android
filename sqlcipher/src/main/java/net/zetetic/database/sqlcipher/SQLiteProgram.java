@@ -113,8 +113,8 @@ public abstract class SQLiteProgram extends SQLiteClosable implements SupportSQL
     }
 
     /** @hide */
-    protected final void onCorruption() {
-        mDatabase.onCorruption();
+    protected final void onCorruption(String message) {
+        mDatabase.onCorruption(message);
     }
 
     /**

@@ -344,9 +344,9 @@ public final class SQLiteDatabase extends SQLiteClosable implements SupportSQLit
     /**
      * Sends a corruption message to the database error handler.
      */
-    void onCorruption() {
+    void onCorruption(String message) {
         EventLog.writeEvent(EVENT_DB_CORRUPT, getLabel());
-        mErrorHandler.onCorruption(this);
+        mErrorHandler.onCorruption(this, message);
     }
 
     /**
@@ -1013,7 +1013,7 @@ public final class SQLiteDatabase extends SQLiteClosable implements SupportSQLit
             try {
                 openInner();
             } catch (SQLiteDatabaseCorruptException ex) {
-                onCorruption();
+                onCorruption(ex.getMessage());
                 openInner();
             }
         } catch (SQLiteException ex) {

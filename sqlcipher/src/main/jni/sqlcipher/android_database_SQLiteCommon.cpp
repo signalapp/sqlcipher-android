@@ -124,8 +124,12 @@ void throw_sqlite3_exception(JNIEnv* env, int errcode,
 
     if (sqlite3Message) {
         char *zFullmsg = sqlite3_mprintf(
-            "%s (code %d)%s%s", sqlite3Message, errcode, 
-            (message ? ": " : ""), (message ? message : "")
+                "FullCode: %d | ErrorCode: %d | ExtendedErrorCode: %d | Message: %s | ExtraMessage: %s",
+                errcode,
+                errcode & 0xff,
+                errcode >> 8,
+                sqlite3Message,
+                (message ? message : "null")
         );
         jniThrowException(env, exceptionClass, zFullmsg);
         sqlite3_free(zFullmsg);
