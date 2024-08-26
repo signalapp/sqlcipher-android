@@ -1,7 +1,3 @@
-Note: This is a light fork of [sqlcipher-android](https://github.com/sqlcipher/sqlcipher-android), mostly just to make certain changes to logging and error reporting.
-
---------
-
 # SQLCipher for Android
 
 SQLCipher for Android provides a library replacement for `android.database.sqlite` on the Android platform for use on [SQLCipher](https://github.com/sqlcipher/sqlcipher) databases. This library is based on the upstream [Android Bindings](https://www.sqlite.org/android/doc/trunk/www/index.wiki) project and aims to be a long-term replacement for the original [SQLCipher for Android](https://github.com/sqlcipher/android-database-sqlcipher) library.
@@ -20,14 +16,14 @@ We welcome contributions, to contribute to SQLCipher for Android, a [contributor
 Add a local reference to the local library and dependency:
 
 ```groovy
-implementation files('libs/sqlcipher-android-4.6.0-release.aar')
+implementation files('libs/sqlcipher-android-4.6.0-S1-release.aar')
 implementation 'androidx.sqlite:sqlite:2.2.0'
 ```
 
 or source a Community edition build from Maven Central:
 
 ```groovy
-implementation 'net.zetetic:sqlcipher-android:4.6.0@aar'
+implementation 'net.zetetic:sqlcipher-android:4.6.0-S1@aar'
 implementation 'androidx.sqlite:sqlite:2.2.0'
 ```
 
